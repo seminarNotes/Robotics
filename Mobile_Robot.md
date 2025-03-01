@@ -123,40 +123,17 @@ $$
 그러면, 에러 상태 방정식을 얻기 위해 위 식을 미분하면,
 
 $$
-\begin{aligned}
-\dot{e} =
-\begin{bmatrix}
-\dot{e}_{x} \\
-\dot{e}_{y} \\
-\dot{e}_{\theta}
-\end{bmatrix} \\
-& = \begin{bmatrix}
-\cos\theta_F (\dot{x}_L - \dot{x}_F) + \sin\theta_F (\dot{y}_L - \dot{y}_F) - \sin\theta_F (x_L - x_F)\dot{\theta}_F + \cos\theta_F (y_L - y_F)\dot{\theta}_F \\
--\sin\theta_F (\dot{x}_L - \dot{x}_F) + \cos\theta_F (\dot{y}_L - \dot{y}_F) - \cos\theta_F (x_L - x_F)\dot{\theta}_F - \sin\theta_F (y_L - y_F)\dot{\theta}_F \\
-\dot{\theta}_L - \dot{\theta}_F
-\end{bmatrix} \\
-\end{aligned}
-$$
-
-& = \begin{bmatrix}
-\cos\theta_F e_{x} + \sin\theta_F e_{y} + e_{y} \omega_F \\
- -\sin\theta_F e_{x} + \cos\theta_F e_{y} - e_{x} \omega_F \\
- \omega_L - \omega_F
- \end{bmatrix} \\
- & = \begin{bmatrix}
- x_L \cos\theta_F + y_L \sin\theta_F + e_{y} \omega_F - v_F \\
- -x_L \sin\theta_F + y_L \cos\theta_F - e_{x} \omega_F \\
- \omega_L - \omega_F
- \end{bmatrix} \\
- & = \begin{bmatrix}
+\begin{align*}
+\dot{e} 
+= \begin{bmatrix}
 v_L \cos e_{\theta} + \omega_F e_{y} - v_F \\
 v_L \sin e_{\theta} - e_{x} \omega_F \\
 \omega_L - \omega_F
 \end{bmatrix} =
 \begin{bmatrix}
-\omega_F e_{y} - v_F \\
-- e_{x} \omega_F \\
-- \omega_F
+\omega_F e_{y} - v_F \\ 
+-e_{x} \omega_F \\
+-\omega_F
 \end{bmatrix} +
 \begin{bmatrix}
 \cos e_{\theta} & 0 \\
@@ -166,9 +143,4 @@ v_L \sin e_{\theta} - e_{x} \omega_F \\
 \end{align*}
 $$
 
-따라서, 에러 상태 방정식을 아래와 같이 쓸 수 있다. 
 
-\begin{align*}
-\dot{e} & = f(e) + g(e)u \quad \\
-\text{or} \quad \dot{e} & = f(e, u)
-\end{align*}
